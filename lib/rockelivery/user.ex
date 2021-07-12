@@ -3,6 +3,7 @@ use Ecto.Schema
 import Ecto.Changeset
 
 alias Ecto.Changeset
+alias Rockelivery.Order
 @primary_key {:id, :binary_id, autogenerate: true}
 
 @fields [:age, :address, :cep, :cpf, :email, :password, :name]
@@ -17,6 +18,8 @@ schema "users" do
     field :password, :string, virtual: true
     field :password_hash, :string
     field :name, :string
+
+    has_many :orders, Order
 
     timestamps()
   end
