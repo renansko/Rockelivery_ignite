@@ -9,7 +9,7 @@ defmodule RockeliveryWeb.UsersControllerTest do
         %{
           "age" => 19,
           "address" => "Tua rua",
-          "cep" => "22222222",
+          "cep" => "81900350",
           "cpf" => "12345678999",
           "email" => "justin@gmail.com",
           "password" => "1234567",

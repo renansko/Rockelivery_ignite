@@ -15,7 +15,7 @@ test "renders create.json" do
     user: %Rockelivery.User{
       address: "Tua rua",
       age: 19,
-      cep: "22222222",
+      cep: "81900350",
       cpf: "12345678999",
       email: "justin@gmail.com",
       id: "58672a0d-c27e-469a-9336-d0bcbaf8cde8",
