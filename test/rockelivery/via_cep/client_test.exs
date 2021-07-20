@@ -1,4 +1,4 @@
-defmodule Rockelivery.ViaCepTest do
+defmodule Rockelivery.ViaCep.ClientTest do
   use ExUnit.Case, async: true
 
   alias Rockelivery.ViaCep.Client

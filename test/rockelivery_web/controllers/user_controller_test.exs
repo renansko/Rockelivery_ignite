@@ -1,7 +1,10 @@
 defmodule RockeliveryWeb.UsersControllerTest do
   use RockeliveryWeb.ConnCase, async: true
 
+  import Mox
   import Rockelivery.Factory
+
+  alias Rockelivery.ViaCep.ClientMock
 
   describe "create/2" do
     test "When all params are valid, creates the user", %{conn: conn} do
@@ -15,6 +18,11 @@ defmodule RockeliveryWeb.UsersControllerTest do
           "password" => "1234567",
           "name" => "justin"
         }
+
+        expect(ClientMock, :get_cep_info, fn _cep ->
+          {:ok, build(:cep_info)
+            }
+        end)
 response =
         conn
         |> post(Routes.users_path(conn, :create, params))
