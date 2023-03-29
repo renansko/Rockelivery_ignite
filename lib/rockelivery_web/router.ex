@@ -2,6 +2,7 @@ defmodule RockeliveryWeb.Router do
   use RockeliveryWeb, :router
 
   alias RockeliveryWeb.Plugs.UUIDChecker
+
   pipeline :api do
     plug :accepts, ["json"]
     plug UUIDChecker
@@ -13,11 +14,11 @@ defmodule RockeliveryWeb.Router do
     get "/", WelcomeController, :index
 
     resources "/users", UsersController, except: [:new, :edit]
+    post "/users/signin", UsersController, :signin
 
     post "/items", ItemsController, :create
 
     post "/orders", OrdersController, :create
-
   end
 
   # Enables LiveDashboard only for development

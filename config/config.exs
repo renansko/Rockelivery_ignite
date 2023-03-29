@@ -5,16 +5,21 @@
 # is restricted to this project.
 
 # General application configuration
-use Mix.Config
+import Config
 
 config :rockelivery,
   ecto_repos: [Rockelivery.Repo]
 
-  config :rockelivery, Rockelivery.Users.Create, via_cep_adapter: Rockelivery.ViaCep.Client
+config :rockelivery, Rockelivery.Users.Create, via_cep_adapter: Rockelivery.ViaCep.Client
 
-  config :rockelivery, Rockelivery.Repo,
+config :rockelivery, Rockelivery.Repo,
   migration_primary_key: [type: :binary_id],
   migration_foreign_key: [type: :binary_id]
+
+config :rockelivery, RockeliveryWeb.Auth.Guardian,
+  issuer: "rockelivery",
+  secret_key: "EGADyV+GNp42Abj/upTv8Q77YN6LBHRA8eHJS83GZOYJutIa8439Noiy1EyE8Vrk"
+
 # Configures the endpoint
 config :rockelivery, RockeliveryWeb.Endpoint,
   url: [host: "localhost"],
