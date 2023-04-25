@@ -11,22 +11,21 @@ defmodule Rockelivery.Item do
 
   @derive {Jason.Encoder, only: @fields ++ [:id]}
   schema "items" do
-      field :category, Ecto.Enum, values: @itens_categorys
-      field :description, :string
-      field :price, :decimal
-      field :photo, :string
+    field :category, Ecto.Enum, values: @itens_categorys
+    field :description, :string
+    field :price, :decimal
+    field :photo, :string
 
-      many_to_many :order, Order, join_through: "orders_items"
+    many_to_many :order, Order, join_through: "orders_items"
 
-
-      timestamps()
-    end
-
-    def changeset(struct \\ %__MODULE__{}, params) do
-      struct
-      |> cast(params, @fields)
-      |> validate_required(@fields)
-      |> validate_length(:description, min: 6)
-      |> validate_number(:price, greater_than: 0)
-    end
+    timestamps()
   end
+
+  def changeset(struct \\ %__MODULE__{}, params) do
+    struct
+    |> cast(params, @fields)
+    |> validate_required(@fields)
+    |> validate_length(:description, min: 6)
+    |> validate_number(:price, greater_than: 0)
+  end
+end
