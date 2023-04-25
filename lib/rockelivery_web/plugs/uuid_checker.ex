@@ -16,7 +16,6 @@ defmodule RockeliveryWeb.Plugs.UUIDChecker do
   def call(conn, _options), do: conn
 
   defp render_error(conn) do
-
     body = Jason.encode!(%{message: "inalid UUID"})
 
     conn

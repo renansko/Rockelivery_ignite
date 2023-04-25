@@ -1,7 +1,5 @@
 defmodule Rockelivery.Users.Delete do
-  alias Rockelivery.{Error,Repo, User}
-
-
+  alias Rockelivery.{Error, Repo, User}
 
   def call(id) do
     case Repo.get(User, id) do

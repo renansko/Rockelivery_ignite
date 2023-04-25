@@ -20,7 +20,6 @@ defmodule RockeliveryWeb.ErrorView do
     %{message: translate_errors(changeset)}
   end
 
-
   def render("error.json", %{result: result}) do
     %{message: result}
   end
