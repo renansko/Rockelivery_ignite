@@ -51,14 +51,11 @@ jobs:
       run: mix coveralls.json
       env:
         MIX_ENV: test
-
-    - name: Run codecov script
-      run: bash <(curl -s https://codecov.io/bash)
-      env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     # - name: Check formating
     #   run: mix format --check-formatted
     # - name: Run Credo
