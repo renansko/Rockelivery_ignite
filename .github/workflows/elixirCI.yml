@@ -5,6 +5,10 @@
 
 name: Elixir CI
 
+env:
+  APP_NAME: rockelivery
+  RELEASE: 0.1.0
+
 on:
   push:
     branches: [ "main" ]
