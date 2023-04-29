@@ -83,9 +83,7 @@ jobs:
           
       - uses: mhanberg/gigalixir-action@v0.4.0
         with:
-          APP_SUBFOLDER: harsh-jealous-barnacle  # Add only if you want to deploy an app that is not at the root of your repository
           GIGALIXIR_APP: harsh-jealous-barnacle # Feel free to also put this in your secrets
-          GIGALIXIR_CLEAN: true # defaults to false
           GIGALIXIR_USERNAME: ${{ secrets.GIGALIXIR_USERNAME }}
           GIGALIXIR_PASSWORD: ${{ secrets.GIGALIXIR_PASSWORD }}
           MIGRATIONS: false  # defaults to true
